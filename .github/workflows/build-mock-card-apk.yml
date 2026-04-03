@@ -39,7 +39,7 @@ jobs:
 
       - name: Assemble debug APK
         working-directory: result/mock_card_island_app
-        run: gradle assembleDebug --stacktrace
+        run: gradle --no-daemon assembleDebug --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
