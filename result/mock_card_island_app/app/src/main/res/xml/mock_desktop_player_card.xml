@@ -3,4 +3,4 @@
     app:card_name="@string/card_title"
     app:card_protocol="JSON"
     app:card_type="1"
-    app:previewImage="@mipmap/ic_launcher" />
+    app:previewImage="@drawable/ic_mock_logo" />

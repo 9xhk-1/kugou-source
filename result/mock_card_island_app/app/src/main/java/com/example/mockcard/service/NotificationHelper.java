@@ -48,7 +48,7 @@ public final class NotificationHelper {
         PendingIntent next = pendingBroadcast(context, PlayerActionReceiver.ACTION_NEXT, 103);
 
         return new NotificationCompat.Builder(context, CH_PLAYBACK)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_mock_logo)
                 .setContentTitle(title)
                 .setContentText(text)
                 .setOngoing(true)
@@ -63,7 +63,7 @@ public final class NotificationHelper {
         String title = song == null ? "Island" : ("Island: " + song.title);
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(context, CH_ISLAND)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_mock_logo)
                 .setContentTitle(title)
                 .setContentText(MockPlayerController.isPlaying() ? "Playing" : "Paused")
                 .setAutoCancel(true)
