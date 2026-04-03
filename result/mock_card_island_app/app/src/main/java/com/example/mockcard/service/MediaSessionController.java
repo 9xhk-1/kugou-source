@@ -7,6 +7,8 @@ import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.Build;
 
+import android.support.v4.media.session.MediaSessionCompat;
+
 import com.example.mockcard.player.MockPlayerController;
 import com.example.mockcard.player.MockSong;
 
@@ -84,6 +86,13 @@ public final class MediaSessionController {
             return null;
         }
         return mediaSession.getSessionToken();
+    }
+
+    public static synchronized MediaSessionCompat.Token compatToken() {
+        if (mediaSession == null) {
+            return null;
+        }
+        return MediaSessionCompat.Token.fromToken(mediaSession.getSessionToken());
     }
 
     public static AudioAttributes notificationAudioAttributes() {

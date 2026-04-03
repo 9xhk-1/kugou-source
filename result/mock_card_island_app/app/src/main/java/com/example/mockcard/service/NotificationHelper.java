@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
+import android.support.v4.media.session.MediaSessionCompat;
+
 import com.example.mockcard.R;
 import com.example.mockcard.player.MockPlayerController;
 import com.example.mockcard.player.MockSong;
@@ -65,7 +67,7 @@ public final class NotificationHelper {
                 .addAction(0, MockPlayerController.isPlaying() ? "Pause" : "Play", play)
                 .addAction(0, "Next", next);
 
-        android.media.session.MediaSession.Token token = MediaSessionController.token();
+        MediaSessionCompat.Token token = MediaSessionController.compatToken();
         if (token != null) {
             builder.setStyle(new androidx.media.app.NotificationCompat.MediaStyle().setMediaSession(token).setShowActionsInCompactView(0, 1, 2));
         }
