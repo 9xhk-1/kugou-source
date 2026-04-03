@@ -23,13 +23,16 @@ Created under:
 - `MusicPlaybackService`: foreground service + periodic progress tick
 - `NotificationHelper`: playback notification and island-like notification
 - `MainActivity`: manual test panel
+- `MusicCardAppWidgetProvider`: real Android home-screen music card widget
+- `MediaSessionController`: media session metadata/state for system media surface
 
 ## Manual Test
 
 1. Launch app.
-2. Use `Prev / Play-Pause / Next`.
-3. Verify UI updates and logcat broadcasts.
-4. Click `Simulate Island Hint` to post island-like notification.
+2. Add widget to launcher desktop: `Mock Card Island` -> `Music Card`.
+3. Use `Prev / Play-Pause / Next` in app or widget and observe widget sync.
+4. Verify playback notification updates silently (no alert spam).
+5. Click `Simulate Island Hint` to send one low-priority island-like hint notification.
 
 ## Notes
 

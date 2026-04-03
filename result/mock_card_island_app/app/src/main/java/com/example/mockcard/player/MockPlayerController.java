@@ -3,6 +3,9 @@ package com.example.mockcard.player;
 import android.content.Context;
 import android.content.Intent;
 
+import com.example.mockcard.service.MediaSessionController;
+import com.example.mockcard.widget.MusicCardAppWidgetProvider;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +58,21 @@ public final class MockPlayerController {
 
     public static void togglePlay() {
         playing = !playing;
-        broadcastPlayState();
+        notifyStateChanged();
+    }
+
+    public static void play() {
+        if (!playing) {
+            playing = true;
+            notifyStateChanged();
+        }
+    }
+
+    public static void pause() {
+        if (playing) {
+            playing = false;
+            notifyStateChanged();
+        }
     }
 
     public static void nextSong() {
@@ -64,8 +81,7 @@ public final class MockPlayerController {
         }
         index = (index + 1) % queue.size();
         progressMs = 0;
-        broadcastMetaChanged();
-        broadcastPlayState();
+        notifyStateChanged();
     }
 
     public static void prevSong() {
@@ -74,8 +90,7 @@ public final class MockPlayerController {
         }
         index = (index - 1 + queue.size()) % queue.size();
         progressMs = 0;
-        broadcastMetaChanged();
-        broadcastPlayState();
+        notifyStateChanged();
     }
 
     public static void seekByPercent(int currentPercent, int maxPercent) {
@@ -86,7 +101,7 @@ public final class MockPlayerController {
         int max = maxPercent <= 0 ? 100 : maxPercent;
         int safeCurrent = Math.max(0, Math.min(currentPercent, max));
         progressMs = (song.durationMs * safeCurrent) / max;
-        broadcastMetaChanged();
+        notifyStateChanged();
     }
 
     public static void tick1000ms() {
@@ -101,7 +116,17 @@ public final class MockPlayerController {
         if (progressMs >= song.durationMs) {
             nextSong();
         } else {
-            broadcastMetaChanged();
+            notifyStateChanged();
+        }
+    }
+
+    private static void notifyStateChanged() {
+        broadcastMetaChanged();
+        broadcastPlayState();
+        MediaSessionController.syncNow();
+        if (appContext != null) {
+            MusicCardAppWidgetProvider.updateAll(appContext);
+            appContext.sendBroadcast(new Intent("com.example.mockcard.ACTION_CARD_REFRESH"));
         }
     }
 

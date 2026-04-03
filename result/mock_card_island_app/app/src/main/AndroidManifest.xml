@@ -31,7 +31,29 @@
         <receiver
             android:name=".receiver.PlayerActionReceiver"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="mock_action_notification_previous" />
+                <action android:name="mock_action_notification_next" />
+                <action android:name="mock_action_notification_play" />
+                <action android:name="mock_action_notification_stop" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".widget.MusicCardAppWidgetProvider"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.mockcard.ACTION_META_CHANGED" />
+                <action android:name="com.example.mockcard.ACTION_PLAY_STATE_CHANGED" />
+                <action android:name="com.example.mockcard.ACTION_CARD_REFRESH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_card_widget_info" />
+        </receiver>
 
         <receiver
             android:name=".receiver.MockCardHostReceiver"

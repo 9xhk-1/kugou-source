@@ -17,6 +17,7 @@ import com.example.mockcard.R;
 import com.example.mockcard.player.MockPlayerController;
 import com.example.mockcard.player.MockSong;
 import com.example.mockcard.service.MusicPlaybackService;
+import com.example.mockcard.widget.MusicCardAppWidgetProvider;
 
 public class MainActivity extends AppCompatActivity {
     private static final Uri DATA_PROVIDER = Uri.parse("content://com.example.mockcard.provider.data");
@@ -90,15 +91,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showIslandHint() {
-        Intent i = new Intent(this, MusicPlaybackService.class);
-        startService(i);
+        MusicPlaybackService.requestIslandHint(this);
         sendBroadcast(new Intent("com.example.mockcard.ACTION_XTC_TOAST_SYS"));
-
-        android.app.NotificationManager nm = (android.app.NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if (nm != null) {
-            nm.notify(MusicPlaybackService.NOTI_ISLAND_ID,
-                    com.example.mockcard.service.NotificationHelper.buildIslandLikeNotification(this));
-        }
     }
 
     private void refreshUi() {
@@ -109,5 +103,7 @@ public class MainActivity extends AppCompatActivity {
         int[] pd = MockPlayerController.positionAndDuration();
         tvState.setText("State: " + (MockPlayerController.isPlaying() ? "playing" : "paused")
                 + "  pos=" + (pd[0] / 1000) + "s/" + (pd[1] / 1000) + "s");
+
+        MusicCardAppWidgetProvider.updateAll(this);
     }
 }

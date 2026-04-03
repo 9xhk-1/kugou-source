@@ -2,6 +2,7 @@ package com.example.mockcard.service;
 
 import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
@@ -35,7 +36,12 @@ public class MusicPlaybackService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        updatePlaybackNotification();
+        String action = intent == null ? null : intent.getAction();
+        if ("com.example.mockcard.ACTION_SHOW_ISLAND".equals(action)) {
+            showIslandLikeNotification();
+        } else {
+            updatePlaybackNotification();
+        }
         return START_STICKY;
     }
 
@@ -62,6 +68,16 @@ public class MusicPlaybackService extends Service {
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (nm != null) {
             nm.notify(NOTI_ISLAND_ID, NotificationHelper.buildIslandLikeNotification(this));
+        }
+    }
+
+    public static void requestIslandHint(Context context) {
+        Intent i = new Intent(context, MusicPlaybackService.class);
+        i.setAction("com.example.mockcard.ACTION_SHOW_ISLAND");
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            context.startForegroundService(i);
+        } else {
+            context.startService(i);
         }
     }
 }
