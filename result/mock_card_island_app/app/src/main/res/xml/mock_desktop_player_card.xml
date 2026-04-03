@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<card-provider xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:card_name="@string/card_title"
-    app:card_protocol="JSON"
-    app:card_type="1"
-    app:previewImage="@drawable/ic_mock_logo" />
+<!--
+  Minimal metadata file for the mock card host.
+  Avoid custom attributes (they require a compiled library attrs.xml).
+-->
+<card-provider>
+    <title>Mock Player Card</title>
+    <preview>@drawable/ic_mock_logo</preview>
+</card-provider>
