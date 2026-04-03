@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="10503"
+    android:versionName="2.4.5.1"
+    android:compileSdkVersion="30"
+    android:compileSdkVersionCodename="11"
+    package="com.kugou.android.watch.lite"
+    platformBuildVersionCode="30"
+    platformBuildVersionName="11">
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="30"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.permission.VOICE_INPUT_ACCESS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-feature android:name="android.hardware.type.watch"/>
+    <queries>
+        <package android:name="com.xtc.weichat"/>
+        <intent>
+            <action android:name="android.media.browse.MediaBrowserService"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <application
+        android:theme="@style/Theme.YouthWatch.NoActionBar"
+        android:label="@string/app_name"
+        android:icon="@drawable/icon"
+        android:name="com.kugou.android.watch.lite.base.application.KGApplication"
+        android:taskAffinity="@string/fore_task"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/icon_round"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity
+            android:theme="@style/Theme.YouthWatch.SPLASH"
+            android:label="@string/app_name"
+            android:name="com.kugou.android.watch.lite.component.SplashActivity"
+            android:exported="true"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="com.google.android.clockwork.RETAIL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kugou.android.watch.lite.xtc.widgetjump.action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.MainActivity"
+            android:exported="true"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.feedback.FeedbackActivity"
+            android:exported="true"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.privacy.PrivacyAgreementActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.privacy.PrivacyActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.family.FamilyControlCodeActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.family.FamilyControlInfoActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.kugou.android.watch.lite.user.login.LoginRiskActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar_NO_SWIPE"
+            android:name="com.kugou.android.watch.lite.component.LimitUseActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.user.info.EditUserPicActivity"
+            android:exported="true"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.user.info.AvatarSelectActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.vip.XTCPayActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.component.vip.CommonPayActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.qrscan.risk.RiskActivity"
+            android:taskAffinity="@string/fore_task"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.common.permission.PermissionActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name="com.kugou.android.watch.lite.common.image.CropImage"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.about.DebugActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:theme="@style/Theme.YouthWatch.NoActionBar"
+            android:name="com.kugou.android.watch.lite.about.TestInputActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true"/>
+        <provider
+            android:name="com.kugou.android.watch.lite.base.ipc.peripheral.connect.ForeProvider"
+            android:exported="false"
+            android:process="@string/fore_task"
+            android:authorities="com.kugou.android.watch.lite.ipc.ForeProvider"/>
+        <service
+            android:name="com.kugou.android.watch.lite.base.ipc.peripheral.connect.ForeService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="@string/fore_task"
+            android:foregroundServiceType="mediaPlayback"/>
+        <service
+            android:name="com.kugou.android.watch.lite.service.MediaService"
+            android:enabled="true"
+            android:exported="true"/>
+        <provider
+            android:name="com.kugou.datacollect.base.cache.WatchDataCollectProvider"
+            android:exported="false"
+            android:authorities="com.kugou.android.watch.lite.datacollect.provider"/>
+        <provider
+            android:name="com.kugou.common.permission.FileProvider"
+            android:exported="false"
+            android:authorities="com.kugou.android.watch.lite.file.path.share"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/permission_file_paths"/>
+        </provider>
+        <provider
+            android:name="com.kugou.android.watch.lite.provider.XtcDesktopCardWidgetProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="com.kugou.android.watch.lite.provider.text">
+            <meta-data
+                android:name="android.card.provider"
+                android:resource="@xml/xtc_desktop_player_card"/>
+            <meta-data
+                android:name="xtcCardWidget"
+                android:value="true"/>
+        </provider>
+        <provider
+            android:name="com.kugou.android.watch.lite.provider.XtcDesktopDataProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="com.kugou.android.watch.lite.provider.data"/>
+        <provider
+            android:name="com.qinghe.163musicpro.provider.MusicCardWidgetProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="com.qinghe.163musicpro.provider.text">
+            <meta-data
+                android:name="android.card.provider"
+                android:resource="@xml/xtc_163music_player_card"/>
+            <meta-data
+                android:name="xtcCardWidget"
+                android:value="true"/>
+        </provider>
+        <provider
+            android:name="com.qinghe.163musicpro.provider.MusicCardDataProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="com.qinghe.163musicpro.provider.data"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="com.kugou.android.watch.lite.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/xtc_desktop_player_file_paths"/>
+        </provider>
+        <receiver
+            android:name="com.kugou.android.watch.lite.base.player.headset.MediaButtonIntentReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process="@string/fore_task">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+        <meta-data
+            android:name="com.xtc.music.notification_version"
+            android:value="1"/>
+        <receiver android:name="com.xtc.system.music.notification.MusicNotificationReceiver"/>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true"/>
+    </application>
+</manifest>

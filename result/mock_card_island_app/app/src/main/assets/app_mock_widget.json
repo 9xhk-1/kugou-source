@@ -1,0 +1,65 @@
+{
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "package": "com.example.mockcard",
+  "type": "constraint",
+  "child": [
+    {
+      "id": "song_title",
+      "type": "text",
+      "text": "Mock Song",
+      "textSize": "14dp",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "layout_constraintTop_toTopOf": "parent",
+      "layout_constraintStart_toStartOf": "parent"
+    },
+    {
+      "id": "singer_title",
+      "type": "text",
+      "text": "Mock Artist",
+      "textSize": "12dp",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "layout_constraintTop_toBottomOf": "song_title",
+      "layout_constraintStart_toStartOf": "parent"
+    },
+    {
+      "id": "progress_music",
+      "type": "seekbar",
+      "layout_width": "match_parent",
+      "layout_height": "16dp",
+      "max": "100",
+      "progress": "0",
+      "layout_constraintTop_toBottomOf": "singer_title",
+      "layout_constraintStart_toStartOf": "parent",
+      "onProgressChanged": [
+        {
+          "type": "cp",
+          "uri": "content://com.example.mockcard.provider.data",
+          "method": "updateProgress",
+          "params": {
+            "current": "${progress_music.progress}",
+            "max": "${progress_music.max}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pause_button",
+      "type": "text",
+      "text": "togglePlay",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "layout_constraintStart_toStartOf": "parent",
+      "onClick": [
+        {
+          "type": "cp",
+          "uri": "content://com.example.mockcard.provider.data",
+          "method": "togglePlay"
+        }
+      ]
+    }
+  ]
+}

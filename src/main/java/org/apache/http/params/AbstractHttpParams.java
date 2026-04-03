@@ -1,0 +1,59 @@
+package org.apache.http.params;
+
+/* JADX INFO: loaded from: classes2.dex */
+@Deprecated
+public abstract class AbstractHttpParams implements HttpParams {
+    public AbstractHttpParams() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public boolean getBooleanParameter(String str, boolean z) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public double getDoubleParameter(String str, double d2) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public int getIntParameter(String str, int i2) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public long getLongParameter(String str, long j) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public boolean isParameterFalse(String str) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public boolean isParameterTrue(String str) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public HttpParams setBooleanParameter(String str, boolean z) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public HttpParams setDoubleParameter(String str, double d2) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public HttpParams setIntParameter(String str, int i2) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.params.HttpParams
+    public HttpParams setLongParameter(String str, long j) {
+        throw new RuntimeException("Stub!");
+    }
+}

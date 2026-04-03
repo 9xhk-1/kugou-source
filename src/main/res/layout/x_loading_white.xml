@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kugou.android.watch.lite.common.widget.XCommonLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/x_comm_loading_bg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleType="centerInside"/>

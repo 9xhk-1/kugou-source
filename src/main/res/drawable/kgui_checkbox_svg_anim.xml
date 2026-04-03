@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_checked="true"
+        android:id="@+id/checked"
+        android:drawable="@drawable/kgui_ic_check_box_svg_checked"/>
+    <item
+        android:id="@+id/unchecked"
+        android:drawable="@drawable/kgui_ic_check_box_svg_unchecked"/>
+    <transition
+        android:drawable="@drawable/kgui_checkbox_unchecked_to_checked_svg_animation"
+        android:toId="@+id/checked"
+        android:fromId="@+id/unchecked"/>
+    <transition
+        android:drawable="@drawable/kgui_checkbox_checked_to_unchecked_svg_animation"
+        android:toId="@+id/unchecked"
+        android:fromId="@+id/checked"/>
+</animated-selector>

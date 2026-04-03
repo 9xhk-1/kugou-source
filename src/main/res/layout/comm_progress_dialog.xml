@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:loadingView="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/loading_view_layout"
+        android:background="@drawable/comm_progress_bg"
+        android:paddingLeft="12dp"
+        android:paddingTop="3dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="44dp"
+        android:layout_centerInParent="true">
+        <com.kugou.android.watch.lite.common.widget.loading.CommonLoadingView
+            android:id="@+id/loading_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            loadingView:drawPadding="5dp"
+            loadingView:iconBg="@drawable/kg_loading_bg_small_dark"
+            loadingView:iconLoading="@drawable/kg_loading_circle_small"
+            loadingView:iconLogo="@drawable/kg_loading_k_small"
+            loadingView:iconPrimaryColor="#0090FF"
+            loadingView:iconSecondaryColor="#FF6C00"
+            loadingView:loadingPosition="floating"
+            loadingView:loadingPrimaryText="@string/loading_tips_primary"
+            loadingView:loadingSecondaryText="@string/loading_tips_secondary"
+            loadingView:loadingTextColor="@color/white"
+            loadingView:loadingTextMode="right"
+            loadingView:loadingTextSize="16sp"/>
+    </LinearLayout>
+</RelativeLayout>

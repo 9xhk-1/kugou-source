@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel_share">Cancel</string>
+    <string name="chat_scene">Chat</string>
+    <string name="moment_scene">Friends\' Story</string>
+    <string name="please_install_moment">Please install Friends\' Story</string>
+    <string name="please_install_weichat">Please install Chat</string>
+</resources>

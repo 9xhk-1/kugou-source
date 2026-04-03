@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="16.5dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:text="手机号登录"
+        android:includeFontPadding="false"/>
+    <TextView
+        android:textSize="15.5dp"
+        android:textColor="@color/white_80"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="5dp"
+        android:text="要登录哪个账号？"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="3dp"/>
+    <com.kugou.android.watch.lite.common.widget.recyclerview.KGRecyclerView
+        android:id="@+id/account_select_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"/>
+</LinearLayout>

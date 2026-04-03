@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kugou.android.watch.lite.common.widget.XCommonLoadingView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:drawPadding="0dp"
+    app:iconBg="@drawable/kg_loading_bg_small_dark"
+    app:iconLoading="@drawable/kg_loading_circle_small"
+    app:iconLogo="@drawable/kg_loading_k_small"
+    app:iconPrimaryColor="#0090FF"
+    app:iconSecondaryColor="#FF6C00"
+    app:loadingPosition="footer"
+    app:loadingPrimaryText="上滑加载更多内容"
+    app:loadingSecondaryText="@string/loading_tips_secondary"
+    app:loadingTextColor="@color/skin_secondary_text"
+    app:loadingTextMode="normal"
+    app:loadingTextSize="12sp"
+    app:skin_enable="true"/>

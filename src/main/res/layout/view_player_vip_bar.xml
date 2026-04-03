@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/vip_song_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/song_info_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/song_info_container">
+        <ImageView
+            android:id="@+id/vip_song_icon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"/>
+        <TextView
+            android:textSize="11dp"
+            android:id="@+id/vip_song_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开通会员免费听"
+            android:layout_marginStart="2dp"/>
+        <ImageView
+            android:id="@+id/vip_song_arrow"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="-4dp"/>
+    </LinearLayout>
+</merge>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android" android:drawable="@drawable/kgui_checkbox_circle_svg_checked">
+    <target
+        android:name="kgui_path_checkbox_checked"
+        android:animation="@anim/kgui_checkcircle_to_unchecked_group_animation"/>
+    <target
+        android:name="kgui_path_checkbox_unchecked"
+        android:animation="@anim/kgui_checkcircle_to_checked_group_animation"/>
+</animated-vector>

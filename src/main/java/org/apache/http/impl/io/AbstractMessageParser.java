@@ -1,0 +1,32 @@
+package org.apache.http.impl.io;
+
+import java.io.IOException;
+import org.apache.http.Header;
+import org.apache.http.HttpException;
+import org.apache.http.HttpMessage;
+import org.apache.http.ParseException;
+import org.apache.http.io.HttpMessageParser;
+import org.apache.http.io.SessionInputBuffer;
+import org.apache.http.message.LineParser;
+import org.apache.http.params.HttpParams;
+
+/* JADX INFO: loaded from: classes2.dex */
+@Deprecated
+public abstract class AbstractMessageParser implements HttpMessageParser {
+    public final LineParser lineParser;
+
+    public AbstractMessageParser(SessionInputBuffer sessionInputBuffer, LineParser lineParser, HttpParams httpParams) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public static Header[] parseHeaders(SessionInputBuffer sessionInputBuffer, int i2, int i3, LineParser lineParser) throws HttpException, IOException {
+        throw new RuntimeException("Stub!");
+    }
+
+    @Override // org.apache.http.io.HttpMessageParser
+    public HttpMessage parse() throws HttpException, IOException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public abstract HttpMessage parseHead(SessionInputBuffer sessionInputBuffer) throws HttpException, ParseException, IOException;
+}

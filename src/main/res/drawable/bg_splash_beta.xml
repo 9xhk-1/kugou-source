@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="#f3f3f3"/>
+    </item>
+    <item
+        android:left="0dp"
+        android:top="0dp">
+        <bitmap
+            android:gravity="top|left"
+            android:src="@drawable/ic_splash_star_tl"/>
+    </item>
+    <item
+        android:top="0dp"
+        android:right="0dp">
+        <bitmap
+            android:gravity="top|right"
+            android:src="@drawable/ic_splash_star_tr"/>
+    </item>
+    <item
+        android:left="10dp"
+        android:top="-50dp"
+        android:right="10dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_splash_slogan"/>
+    </item>
+    <item android:bottom="10dp">
+        <bitmap
+            android:gravity="bottom|center_horizontal"
+            android:src="@drawable/ic_splash_logo"/>
+    </item>
+</layer-list>

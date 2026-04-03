@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/common_loading_anim_id"
+        android:drawable="@drawable/common_loading_anim"/>
+</layer-list>

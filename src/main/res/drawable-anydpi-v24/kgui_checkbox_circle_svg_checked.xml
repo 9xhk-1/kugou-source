@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="15dp"
+    android:width="15dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
+    <group
+        android:name="kgui_path_group_checkbox_group"
+        android:pivotX="15"
+        android:pivotY="15">
+        <path
+            android:name="kgui_path_checkbox_unchecked"
+            android:fillColor="#96a1ac"
+            android:pathData="M15,0C6.7157,0 0,6.7157 0,15C0,23.2843 6.7157,30 15,30C23.2843,30 30,23.2843 30,15C30,6.7157 23.2843,0 15,0ZM15,3.1034C21.5703,3.1034 26.8966,8.4297 26.8966,15C26.8966,21.5703 21.5703,26.8966 15,26.8966C8.4297,26.8966 3.1034,21.5703 3.1034,15C3.1034,8.4297 8.4297,3.1034 15,3.1034Z"
+            android:strokeColor="#00000000"
+            android:strokeWidth="1"
+            android:fillType="evenOdd"/>
+        <path
+            android:name="kgui_path_checkbox_checked"
+            android:fillColor="#0090ff"
+            android:pathData="M15,0 C6.71572875,0 0,6.71572875 0,15 C0,23.2842712 6.71572875,30 15,30 C23.2842712,30 30,23.2842712 30,15 C30,6.71572875 23.2842712,0 15,0 Z                           M20.9286438,9.46602766 C21.5144303,8.88024122 22.4641777,8.88024122 23.0499642,9.46602766 C23.599139,10.0152024 23.6334624,10.8842649 23.1529344,11.4734256 L23.0499642,11.587348 L13.4238882,21.213424 C12.883894,21.7534182 12.0323988,21.7968583 11.4423535,21.3369547 L11.3280002,21.2382607 L7.24414463,17.3435276 C6.64464125,16.7717871 6.62213499,15.8223063 7.1938755,15.222803 C7.72988222,14.6607685 8.59788721,14.6058605 9.19826962,15.0722921 L9.31460014,15.1725338 L12.338,18.056 L20.9286438,9.46602766 Z"
+            android:strokeWidth="1"
+            android:fillType="nonZero"/>
+    </group>
+</vector>

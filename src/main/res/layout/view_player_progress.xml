@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/auto_nt"
+        android:id="@+id/tv_progress_tip"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="@+id/song_info_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/song_info_container"/>
+    <SeekBar
+        android:id="@+id/progress_music"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="3dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_player_progressbar"
+        android:minHeight="3dp"
+        android:thumb="@drawable/sp_player_seek_bar_thumb"
+        android:thumbOffset="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71"
+        app:layout_constraintWidth_percent="0.9"/>
+</merge>

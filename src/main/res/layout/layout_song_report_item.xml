@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+    <ImageView
+        android:id="@+id/type_checkbox"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/shape_circle_frame"/>
+    <TextView
+        android:textSize="13dp"
+        android:textColor="@color/white"
+        android:id="@+id/type_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="政治反动"
+        android:includeFontPadding="false"
+        android:layout_marginStart="2dp"/>
+</LinearLayout>

@@ -1,0 +1,6 @@
+package e.c.a.g.a.d.o.c;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface e {
+    void onAttachStateChanged(boolean z);
+}

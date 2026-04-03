@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+    <include layout="@layout/layout_rotary_keypad_holder"/>
+    <include layout="@layout/view_player_cover"/>
+    <include layout="@layout/view_player_menu"/>
+    <include layout="@layout/view_player_controller"/>
+    <include layout="@layout/view_player_title"/>
+    <include layout="@layout/view_player_progress"/>
+    <include layout="@layout/view_player_vip_bar"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

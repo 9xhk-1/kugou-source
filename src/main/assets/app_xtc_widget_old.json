@@ -1,0 +1,223 @@
+{
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "package": "com.kugou.android.watch.lite",
+  "layout_constraintHorizontal_chainStyle": "spread_inside",
+  "type": "constraint",
+  "child": [
+    {
+      "layout_constraintEnd_toEndOf": "parent",
+      "layout_width": "wrap_content",
+      "layout_height": "45dp",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "type": "constraint",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_marginTop": "10dp",
+      "child": [
+        {
+          "layout_width": "40dp",
+          "layout_height": "40dp",
+          "layout_constraintBottom_toBottomOf": "pause_button",
+          "layout_marginEnd": "10dp",
+          "src": "@drawable/young_ic_widget_pre_song",
+          "id": "prev_button",
+          "onClick": [{
+            "method": "prevSong",
+            "type": "cp",
+            "uri": "content://com.kugou.android.watch.lite.provider.data"
+          }],
+          "layout_constraintTop_toTopOf": "pause_button",
+          "colorFilter": "xtcColor/textColorPrimary",
+          "type": "image",
+          "layout_constraintStart_toStartOf": "parent"
+        },
+        {
+          "layout_constraintStart_toEndOf": "prev_button",
+          "layout_width": "45dp",
+          "layout_height": "45dp",
+          "onClick": [
+            {
+              "type": "cp",
+              "uri": "content://com.kugou.android.watch.lite.provider.data",
+              "method": "togglePlay"
+            }
+          ],
+          "src": "@drawable/young_ic_widget_pause_song",
+          "layout_marginStart": "8dp",
+          "id": "pause_button",
+          "background": "xtcColor/colorSecondary",
+          "cornerFamily": "rounded",
+          "cornerSize": "50%",
+          "colorFilter": "xtcColor/textColorPrimary",
+          "textColor": "xtcColor/textColorPrimary",
+          "type": "shapeableImage"
+        },
+        {
+          "layout_constraintStart_toEndOf": "pause_button",
+          "layout_width": "40dp",
+          "layout_height": "40dp",
+          "layout_constraintBottom_toBottomOf": "pause_button",
+          "src": "@drawable/young_ic_widget_next_song",
+          "layout_marginStart": "8dp",
+          "id": "next_button",
+          "colorFilter": "xtcColor/textColorPrimary",
+          "onClick": [{
+            "method": "nextSong",
+            "type": "cp",
+            "uri": "content://com.kugou.android.watch.lite.provider.data"
+          }],
+          "layout_constraintTop_toTopOf": "pause_button",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "ellipsize": "marquee",
+      "marqueeRepeatLimit": "-1",
+      "layout_width": "90dp",
+      "layout_height": "wrap_content",
+      "textSize": "12dp",
+      "layout_marginStart": "4dp",
+      "type": "text",
+      "singleLine": "true",
+      "layout_marginTop": "4dp",
+      "layout_constraintStart_toEndOf": "player_image",
+      "layout_constraintTop_toBottomOf": "song_title",
+      "id": "singer_title",
+      "textColor": "xtcColor/colorSecondary",
+      "text": "因乐相遇"
+    },
+    {
+      "ellipsize": "marquee",
+      "marqueeRepeatLimit": "-1",
+      "layout_width": "90dp",
+      "layout_height": "wrap_content",
+      "textSize": "14dp",
+      "layout_marginEnd": "5dp",
+      "layout_marginStart": "4dp",
+      "layout_constraintTop_toTopOf": "player_image",
+      "type": "text",
+      "singleLine": "true",
+      "layout_marginTop": "2dp",
+      "layout_constraintStart_toEndOf": "player_image",
+      "textColor": "xtcColor/textColorPrimary",
+      "id": "song_title",
+      "text": "酷狗概念版"
+    },
+
+    {
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "textSize": "9dp",
+      "layout_marginEnd": "5dp",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "layout_marginStart": "1dp",
+      "id": "song_time_current",
+      "text": "00:00 ",
+      "type": "text",
+      "textColor": "xtcColor/colorSecondary",
+      "layout_constraintStart_toStartOf": "parent"
+    },
+    {
+      "layout_constraintEnd_toEndOf": "progress_music",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "textSize": "9dp",
+      "layout_marginEnd": "1dp",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "id": "song_time_total",
+      "text": "00:00 ",
+      "type": "text",
+      "textColor": "xtcColor/colorSecondary"
+    },
+    {
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "id": "appname_icon",
+      "textColor": "xtcColor/textColorPrimary",
+      "layout_constraintTop_toTopOf": "appicon",
+      "type": "text",
+      "text": "酷狗概念版 ",
+      "textSize": "11dp",
+      "layout_marginTop": "2dp"
+    },
+    {
+      "layout_constraintEnd_toEndOf": "progress_music",
+      "layout_width": "16dp",
+      "layout_height": "16dp",
+      "src": "@drawable/icon",
+      "id": "appicon",
+      "layout_constraintTop_toTopOf": "parent",
+      "type": "image"
+    },
+    {
+      "layout_width": "44dp",
+      "layout_height": "44dp",
+      "layout_constraintTop_toBottomOf": "appname_icon",
+      "id": "player_image",
+      "cornerRadius": "6dp",
+      "src": "@drawable/album_img_default",
+      "type": "image",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_marginTop": "10.5dp"
+    },
+
+    {
+      "layout_width": "match_parent",
+      "layout_height": "67dp",
+      "layout_constraintBottom_toBottomOf": "player_image",
+      "id": "top_mask_click",
+      "layout_constraintTop_toTopOf": "parent",
+      "type": "text",
+      "onClick": [
+        {
+          "type": "activity",
+          "packageName": "com.kugou.android.watch.lite",
+          "action": "com.kugou.android.watch.lite.xtc.widgetjump.action"
+        },{
+          "type": "cp",
+          "uri": "content://com.kugou.android.watch.lite.provider.data",
+          "method": "openapp"
+        }
+      ]
+    },
+
+    {
+      "type": "seekbar",
+      "layout_constraintEnd_toEndOf": "parent",
+      "layout_width": "match_parent",
+      "layout_height": "15dp",
+      "max": "100",
+      "paddingStart": "4dp",
+      "paddingEnd": "4dp",
+      "thumb": "@drawable/common_xtc_widget",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_marginTop": "8.5dp",
+      "paddingBottom": "2dp",
+      "maxHeight": "3dp",
+
+      "progressTint":"xtcColor/textColorPrimary",
+      "progressBackgroundTint": "xtcColor/colorSecondary",
+
+      "layout_constraintTop_toBottomOf": "player_image",
+      "progress": "0",
+      "style": "?attr/progressBarStyleHorizontal",
+      "progressDrawable": "@drawable/bg_player_progressbar_widget",
+      "id": "progress_music",
+      "paddingTop": "2dp",
+      "layout_constraintHorizontal_bias": "0.0",
+      "onProgressChanged": [
+        {
+          "type": "cp",
+          "uri": "content://com.kugou.android.watch.lite.provider.data",
+          "method": "updateProgress",
+          "params": {
+            "current": "${progress_music.progress}",
+            "max": "${progress_music.max}"
+          }
+        }
+      ]
+    }
+
+  ]
+}

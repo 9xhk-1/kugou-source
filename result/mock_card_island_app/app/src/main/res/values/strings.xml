@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mock Card Island</string>
+    <string name="card_title">Mock Player Card</string>
+    <string name="channel_playback">Playback</string>
+    <string name="channel_card">Card Host</string>
+    <string name="noti_title">Mock Song</string>
+    <string name="noti_text">Unknown Artist</string>
+</resources>

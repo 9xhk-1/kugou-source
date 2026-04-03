@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/navigation_bar_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/screen_corner_space_top_hold"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+        <include layout="@layout/layout_main_login_entry"/>
+        <include layout="@layout/layout_main_search_bar"/>
+        <include layout="@layout/layout_main_recommend_entry"/>
+        <FrameLayout
+            android:orientation="vertical"
+            android:id="@+id/header_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include layout="@layout/layout_main_audio_identify_sec_entry"/>
+        <include layout="@layout/layout_main_vip_entry"/>
+        <include layout="@layout/layout_main_fav_entry"/>
+        <include layout="@layout/layout_main_download_entry"/>
+        <include layout="@layout/layout_history_entry"/>
+        <include layout="@layout/layout_main_setting_entry"/>
+    </LinearLayout>
+</ScrollView>

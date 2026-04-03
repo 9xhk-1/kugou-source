@@ -1,0 +1,179 @@
+{
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "package": "com.qinghe.163musicpro",
+  "type": "constraint",
+  "child": [
+    {
+      "layout_width": "44dp",
+      "layout_height": "44dp",
+      "id": "player_image",
+      "cornerRadius": "6dp",
+      "src": "@drawable/album_img_default",
+      "type": "image",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_constraintTop_toTopOf": "parent",
+      "layout_marginTop": "6dp"
+    },
+    {
+      "id": "song_title",
+      "type": "text",
+      "text": "网易云音乐",
+      "singleLine": "true",
+      "ellipsize": "marquee",
+      "marqueeRepeatLimit": "-1",
+      "textSize": "14dp",
+      "textColor": "xtcColor/textColorPrimary",
+      "layout_width": "95dp",
+      "layout_height": "wrap_content",
+      "layout_constraintStart_toEndOf": "player_image",
+      "layout_constraintTop_toTopOf": "player_image",
+      "layout_marginStart": "6dp"
+    },
+    {
+      "id": "singer_title",
+      "type": "text",
+      "text": "未在播放",
+      "singleLine": "true",
+      "ellipsize": "marquee",
+      "marqueeRepeatLimit": "-1",
+      "textSize": "12dp",
+      "textColor": "xtcColor/colorSecondary",
+      "layout_width": "95dp",
+      "layout_height": "wrap_content",
+      "layout_constraintStart_toStartOf": "song_title",
+      "layout_constraintTop_toBottomOf": "song_title",
+      "layout_marginTop": "4dp"
+    },
+    {
+      "type": "seekbar",
+      "id": "progress_music",
+      "layout_width": "match_parent",
+      "layout_height": "14dp",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_constraintEnd_toEndOf": "parent",
+      "layout_constraintTop_toBottomOf": "player_image",
+      "layout_marginTop": "8dp",
+      "max": "100",
+      "progress": "0",
+      "progressTint": "xtcColor/textColorPrimary",
+      "progressBackgroundTint": "xtcColor/colorTertiary",
+      "thumb": "@drawable/sp_player_seek_bar_thumb_widget",
+      "onProgressChanged": [
+        {
+          "type": "cp",
+          "uri": "content://com.qinghe.163musicpro.provider.data",
+          "method": "updateProgress",
+          "params": {
+            "current": "${progress_music.progress}",
+            "max": "${progress_music.max}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "song_time_current",
+      "type": "text",
+      "text": "00:00",
+      "textSize": "9dp",
+      "textColor": "xtcColor/colorSecondary",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "layout_marginTop": "2dp"
+    },
+    {
+      "id": "song_time_total",
+      "type": "text",
+      "text": "00:00",
+      "textSize": "9dp",
+      "textColor": "xtcColor/colorSecondary",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "layout_constraintEnd_toEndOf": "parent",
+      "layout_constraintTop_toBottomOf": "progress_music",
+      "layout_marginTop": "2dp"
+    },
+    {
+      "layout_width": "wrap_content",
+      "layout_height": "45dp",
+      "type": "constraint",
+      "layout_constraintStart_toStartOf": "parent",
+      "layout_constraintEnd_toEndOf": "parent",
+      "layout_constraintTop_toBottomOf": "song_time_current",
+      "layout_marginTop": "6dp",
+      "child": [
+        {
+          "id": "prev_button",
+          "type": "image",
+          "src": "@drawable/young_ic_widget_pre_song",
+          "layout_width": "40dp",
+          "layout_height": "40dp",
+          "colorFilter": "xtcColor/textColorPrimary",
+          "layout_constraintStart_toStartOf": "parent",
+          "layout_constraintTop_toTopOf": "parent",
+          "onClick": [
+            {
+              "type": "cp",
+              "uri": "content://com.qinghe.163musicpro.provider.data",
+              "method": "prevSong"
+            }
+          ]
+        },
+        {
+          "id": "pause_button",
+          "type": "shapeableImage",
+          "src": "@drawable/young_ic_widget_play_song",
+          "background": "xtcColor/colorTertiary",
+          "cornerFamily": "rounded",
+          "cornerSize": "50%",
+          "layout_width": "45dp",
+          "layout_height": "45dp",
+          "layout_constraintStart_toEndOf": "prev_button",
+          "layout_marginStart": "8dp",
+          "onClick": [
+            {
+              "type": "cp",
+              "uri": "content://com.qinghe.163musicpro.provider.data",
+              "method": "togglePlay"
+            }
+          ]
+        },
+        {
+          "id": "next_button",
+          "type": "image",
+          "src": "@drawable/young_ic_widget_next_song",
+          "layout_width": "40dp",
+          "layout_height": "40dp",
+          "colorFilter": "xtcColor/textColorPrimary",
+          "layout_constraintStart_toEndOf": "pause_button",
+          "layout_marginStart": "8dp",
+          "onClick": [
+            {
+              "type": "cp",
+              "uri": "content://com.qinghe.163musicpro.provider.data",
+              "method": "nextSong"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "top_click",
+      "type": "text",
+      "text": "",
+      "layout_width": "match_parent",
+      "layout_height": "68dp",
+      "layout_constraintTop_toTopOf": "parent",
+      "layout_constraintBottom_toBottomOf": "player_image",
+      "onClick": [
+        {
+          "type": "cp",
+          "uri": "content://com.qinghe.163musicpro.provider.data",
+          "method": "openapp"
+        }
+      ]
+    }
+  ]
+}

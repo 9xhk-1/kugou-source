@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="15dp"
+    android:width="15dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
+    <group
+        android:name="kgui_path_group_checkbox_group"
+        android:pivotX="15"
+        android:pivotY="15">
+        <path
+            android:name="kgui_path_checkbox_unchecked"
+            android:fillColor="#96a1ac"
+            android:pathData="M15,0C6.7157,0 0,6.7157 0,15C0,23.2843 6.7157,30 15,30C23.2843,30 30,23.2843 30,15C30,6.7157 23.2843,0 15,0ZM15,3.1034C21.5703,3.1034 26.8966,8.4297 26.8966,15C26.8966,21.5703 21.5703,26.8966 15,26.8966C8.4297,26.8966 3.1034,21.5703 3.1034,15C3.1034,8.4297 8.4297,3.1034 15,3.1034Z"
+            android:strokeColor="#00000000"
+            android:strokeWidth="1"
+            android:fillType="evenOdd"/>
+    </group>
+</vector>
